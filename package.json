@@ -1,12 +1,12 @@
 {
   "name": "dev.goreng.loop",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "displayName": "Run Loop",
   "description": "Allows non monobehaviours to access Unity events",
   "unity": "2022.3",
   "unityRelease": "7f1",
   "dependencies": {
-    "dev.goreng.events": "0.0.1"
+    "dev.goreng.events": "1.0.0"
   },
   "author": {
     "name": "Jason Meulenhoff",
