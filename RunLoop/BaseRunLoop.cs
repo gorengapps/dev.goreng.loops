@@ -12,17 +12,17 @@ namespace Framework.Loop
 
         private void Update()
         {
-            _onUpdateProducer.Publish(Time.deltaTime);
+            _onUpdateProducer.Publish(this, Time.deltaTime);
         }
 
         private void LateUpdate()
         {
-            _onLateUpdateProducer.Publish(Time.deltaTime);
+            _onLateUpdateProducer.Publish(this, Time.deltaTime);
         }
 
         private void FixedUpdate()
         {
-            _onFixedUpdateProducer.Publish(Time.fixedDeltaTime);
+            _onFixedUpdateProducer.Publish(this, Time.fixedDeltaTime);
         }
     }
 
@@ -36,5 +36,6 @@ namespace Framework.Loop
         {
             StartCoroutine(routine);
         }
+        
     }
 }

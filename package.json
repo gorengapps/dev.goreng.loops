@@ -6,7 +6,7 @@
   "unity": "2022.3",
   "unityRelease": "7f1",
   "dependencies": {
-    "dev.goreng.events": "1.0.0"
+    "dev.goreng.events": "1.2.0"
   },
   "author": {
     "name": "Jason Meulenhoff",

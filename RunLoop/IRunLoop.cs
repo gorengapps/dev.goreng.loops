@@ -10,5 +10,6 @@ namespace Framework.Loop
         public IEventListener<float> onLateUpdate { get; }
 
         public void Coroutine(IEnumerator routine);
+        public void StopCoroutine(IEnumerator routine);
     }
 }
