@@ -26,7 +26,7 @@ namespace Framework.Loop
         }
     }
 
-    public partial class BaseRunLoop : IRunLoop
+    public partial class BaseRunLoop : IRunLoop, ICoroutineRunner
     {
         public IEventListener<float> onUpdate => _onUpdateProducer.listener;
         public IEventListener<float> onFixedUpdate => _onFixedUpdateProducer.listener;
