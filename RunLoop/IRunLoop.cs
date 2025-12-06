@@ -1,64 +1,25 @@
-using System;
-using System.Collections;
-using UnityEngine;
+﻿using Framework.Events;
 
 namespace Framework.Loop
 {
+    /// <summary>
+    /// Represents a loop that fires update events for standard Unity lifecycle hooks.
+    /// </summary>
     public interface IRunLoop
     {
         /// <summary>
-        /// Wrapper for RepeatInvoke
+        /// Event fired during the Update loop. Payload is deltaTime.
         /// </summary>
-        /// <param name="method"></param>
-        /// <param name="interval"></param>
-        public Coroutine StartRoutine(Action method, float interval);
+        public IEventListener<float> onUpdate { get; }
 
         /// <summary>
-        /// Starts a coroutine
+        /// Event fired during the FixedUpdate loop. Payload is fixedDeltaTime.
         /// </summary>
-        /// <param name="routine"></param>
-        public void CallCoroutine(IEnumerator routine);
-        
-        /// <summary>
-        /// Stops a coroutine
-        /// </summary>
-        /// <param name="routine"></param>
-        public void StopCoroutine(Coroutine routine);
-        
-        /// <summary>
-        /// Subscribe to runloop notifications
-        /// </summary>
-        /// <param name="callback"></param>
-        public void Subscribe(Action<float> callback);
-        
-        /// <summary>
-        /// Subscribe to runloop notifications
-        /// </summary>
-        /// <param name="callback"></param>
-        public void SubscribeFixed(Action<float> callback);
-                
-        /// <summary>
-        /// Subscribe to runloop notifications
-        /// </summary>
-        /// <param name="callback"></param>
-        public void SubscribeLate(Action<float> callback);
-        
-        /// <summary>
-        /// Unsubscribe from runloop notifications
-        /// </summary>
-        /// <param name="callback"></param>
-        public void UnSubscribe(Action<float> callback);
+        public IEventListener<float> onFixedUpdate { get; }
 
         /// <summary>
-        /// Starts a routine
+        /// Event fired during the LateUpdate loop. Payload is deltaTime.
         /// </summary>
-        /// <param name="routine"></param>
-        public void Coroutine(IEnumerator routine);
-        
-        /// <summary>
-        /// Stops a routine
-        /// </summary>
-        /// <param name="routine"></param>
-        public void StopCoroutine(IEnumerator routine);
+        public IEventListener<float> onLateUpdate { get; }
     }
 }

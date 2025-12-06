@@ -1,7 +1,7 @@
 {
     "name": "dev.goreng.loop",
     "rootNamespace": "Framework.Loop",
-    "references": [],
+    "references": ["dev.goreng.events"],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
